@@ -1,7 +1,7 @@
 import { useState } from "react";
 import initialState from "../initialState";
 
-const useState = () => {
+const useAppState = () => {
   const [state, setState] = useState(initialState);
 
   const addToCart = (newItem) => {
@@ -25,4 +25,4 @@ const useState = () => {
   };
 };
 
-export default useState;
+export default useAppState;

@@ -8,13 +8,13 @@ import Payment from "../containers/Payment";
 import Success from "../containers/Success";
 import Layout from "../components/Layout";
 import AppContext from "../context/AppContext";
-import useState from "../hooks/useState";
+import useAppState from "../hooks/useAppState";
 
 const App = () => {
-  const { state } = useState();
+  const AppState = useAppState();
   return (
     <BrowserRouter>
-      <AppContext.Provider value={state}>
+      <AppContext.Provider value={AppState}>
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />

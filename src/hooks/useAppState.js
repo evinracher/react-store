@@ -21,7 +21,7 @@ const useAppState = () => {
   return {
     state,
     addToCart,
-    removeFromCart
+    removeFromCart,
   };
 };
 

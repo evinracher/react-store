@@ -4,7 +4,9 @@ import AppContext from "../../context/AppContext";
 import "./Header.css";
 
 const Header = () => {
-  const { state: { cart } } = useContext(AppContext);
+  const {
+    state: { cart },
+  } = useContext(AppContext);
   return (
     <div className="Header">
       <h1 className="Header-title">

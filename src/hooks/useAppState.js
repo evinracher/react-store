@@ -11,7 +11,7 @@ const useAppState = () => {
     });
   };
 
-  const removeToCart = (itemIndex) => {
+  const removeFromCart = (itemIndex) => {
     setState({
       ...state,
       cart: state.cart.filter((_, index) => index !== itemIndex),
@@ -21,7 +21,7 @@ const useAppState = () => {
   return {
     state,
     addToCart,
-    removeToCart
+    removeFromCart
   };
 };
 

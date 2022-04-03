@@ -18,10 +18,18 @@ const useAppState = () => {
     });
   };
 
+  const addToBuyer = (buyer) => {
+    setState({
+      ...state,
+      buyer,
+    });
+  };
+
   return {
     state,
     addToCart,
     removeFromCart,
+    addToBuyer
   };
 };
 

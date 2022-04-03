@@ -37,11 +37,11 @@ const Checkout = () => {
       </div>
       <div className="Checkout-sidebar">
         <h3>Total: ${total}</h3>
-        {!!total &&
+        {!!total && (
           <Link to="/checkout/information">
             <button type="button">Continue</button>
           </Link>
-        }
+        )}
       </div>
     </div>
   );

@@ -7,19 +7,25 @@ import NotFound from "../containers/NotFound";
 import Payment from "../containers/Payment";
 import Success from "../containers/Success";
 import Layout from "../components/Layout";
+import AppContext from "../context/AppContext";
+import useState from "../hooks/useState";
+
 const App = () => {
+  const { state } = useState();
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/checkout" element={<Checkout />} />
-          <Route exact path="/checkout/information" element={<Information />} />
-          <Route exact path="/checkout/payment" element={<Payment />} />
-          <Route exact path="/checkout/success" element={<Success />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+      <AppContext.Provider value={state}>
+        <Layout>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/checkout" element={<Checkout />} />
+            <Route exact path="/checkout/information" element={<Information />} />
+            <Route exact path="/checkout/payment" element={<Payment />} />
+            <Route exact path="/checkout/success" element={<Success />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </AppContext.Provider>
     </BrowserRouter>
   );
 };

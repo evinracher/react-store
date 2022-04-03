@@ -13,13 +13,15 @@ const Checkout = () => {
             <span>$10</span>
           </div>
           <button type="button">
-            <i className="fas fa-trash-alt"/>
+            <i className="fas fa-trash-alt" />
           </button>
         </div>
       </div>
       <div className="Checkout-sidebar">
         <h3>Total: $10</h3>
-        <Link to="/checkout/information"><button type="button">Continue</button></Link>
+        <Link to="/checkout/information">
+          <button type="button">Continue</button>
+        </Link>
       </div>
     </div>
   );

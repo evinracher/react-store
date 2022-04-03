@@ -9,7 +9,9 @@ const Header = () => {
         <Link to="/">PlatziConf Store</Link>
       </h1>
       <div className="Header__checkout">
-        <Link to="/checkout"><i class="fa-solid fa-basket-shopping"></i></Link>
+        <Link to="/checkout">
+          <i class="fa-solid fa-basket-shopping"></i>
+        </Link>
       </div>
     </div>
   );

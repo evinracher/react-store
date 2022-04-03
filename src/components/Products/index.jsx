@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "../Product";
+import "./Products.css";
 
 const Products = ({ products }) => {
   return (
@@ -12,3 +13,5 @@ const Products = ({ products }) => {
     </div>
   );
 };
+
+export default Products;

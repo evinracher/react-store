@@ -18,7 +18,7 @@ const useAppState = () => {
     });
   };
 
-  const addToBuyer = (buyer) => {
+  const addBuyer = (buyer) => {
     setState({
       ...state,
       buyer,
@@ -29,7 +29,7 @@ const useAppState = () => {
     state,
     addToCart,
     removeFromCart,
-    addToBuyer
+    addBuyer
   };
 };
 

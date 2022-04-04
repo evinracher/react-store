@@ -13,8 +13,8 @@ import useAppState from "../hooks/useAppState";
 const App = () => {
   const AppState = useAppState();
   return (
-    <BrowserRouter>
-      <AppContext.Provider value={AppState}>
+    <AppContext.Provider value={AppState}>
+      <BrowserRouter>
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -29,8 +29,8 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
-      </AppContext.Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 };
 

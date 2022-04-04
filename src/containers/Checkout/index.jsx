@@ -24,8 +24,8 @@ const Checkout = () => {
         <h3>Product list</h3>
         {!total && <h4>You haven't added products to cart</h4>}
         {cart.map((item, index) => (
-          <div className="Checkout-item">
-            <div key={index} className="Checkout-element">
+          <div key={item.id} className="Checkout-item">
+            <div className="Checkout-element">
               <h2>{item.title}</h2>
               <span>${item.price}</span>
             </div>

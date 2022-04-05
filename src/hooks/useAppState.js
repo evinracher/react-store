@@ -21,7 +21,14 @@ const useAppState = () => {
   const addBuyer = (buyer) => {
     setState({
       ...state,
-      buyer,
+      buyers: [...state.buyers, buyer],
+    });
+  };
+
+  const addNewOrder = (order) => {
+    setState({
+      ...state,
+      orders: [...state.orders, order],
     });
   };
 
@@ -29,7 +36,8 @@ const useAppState = () => {
     state,
     addToCart,
     removeFromCart,
-    addBuyer
+    addBuyer,
+    addNewOrder,
   };
 };
 

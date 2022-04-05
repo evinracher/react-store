@@ -22,7 +22,7 @@ const Information = () => {
       phone: formData.get("phone"),
     };
     addBuyer(buyer);
-    navigate('/checkout/payment');
+    navigate("/checkout/payment");
   };
   return (
     <div className="Information">

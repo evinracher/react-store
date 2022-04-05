@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../../context/AppContext";
+import { sumTotal } from "../../utils";
+
 import "./Checkout.css";
 
 const Checkout = () => {
@@ -13,10 +15,7 @@ const Checkout = () => {
     removeFromCart(itemIndex);
   };
 
-  const total = cart.reduce(
-    (accumulator, currentItem) => accumulator + currentItem.price,
-    0
-  );
+  const total = sumTotal(cart);
 
   return (
     <div className="Checkout">

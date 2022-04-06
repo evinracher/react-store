@@ -13,13 +13,13 @@ const Home = () => {
       <meta name="twitter:description" content="Platzi Conf Store" />
       <meta
         name="twitter:image"
-        content="https://s3.amazonaws.com/gndx.dev/gndxdev.png"
+        content="LINK_THUMBNAIl"
       />
       <meta property="og:title" content="Platzi Conf Store" />
       <meta property="og:description" content="Platzi Conf Store" />
       <meta
         property="og:image"
-        content="https://s3.amazonaws.com/gndx.dev/gndxdev.png"
+        content="LINK_THUMBNAIL"
       />
       <meta property="og:url" content="platzistore.xyz" />
       <meta property="og:site_name" content="Platzi Conf Store" />

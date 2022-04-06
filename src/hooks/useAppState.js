@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import initialState from "../initialState";
+
+const API = 'http://localhost:1337/api/products?populate=%2A';
 
 const useAppState = () => {
   const [state, setState] = useState(initialState);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(API)
+      .then(response => response.json())
+      .then(data => setProducts(data.data));
+  }, []);
+
 
   const addToCart = (newItem) => {
     setState({
@@ -38,6 +48,7 @@ const useAppState = () => {
     removeFromCart,
     addBuyer,
     addNewOrder,
+    products
   };
 };
 

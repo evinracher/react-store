@@ -5,17 +5,16 @@ import "./Products.css";
 
 const Products = () => {
   const {
-    state: { products },
+    products,
     addToCart,
   } = useContext(AppContext);
   const handleAddToCart = (product) => {
     addToCart(product);
   };
-
   return (
     <div className="Products">
       <div className="Products-items">
-        {products.map((item,index) => (
+        {products.map((item, index) => (
           <Product
             key={index}
             product={item}

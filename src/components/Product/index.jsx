@@ -1,17 +1,19 @@
 import React from "react";
 
 const Product = ({ product, handleAddToCart }) => {
+  const { attributes } = product;
   return (
     <div className="Products-item">
-      <img src={product.image} alt={product.title} />
+      {/* Put localhost in a constant. Maybe in .env */}
+      <img src={`http://localhost:1337${attributes.image.data[0].attributes.url}`} alt={attributes.title} />
       <div className="Products-item-info">
         <h2>
-          {product.title}
-          <span>${product.price}</span>
+          {attributes.title}
+          <span>${attributes.price}</span>
         </h2>
-        <p>{product.description}</p>
+        <p>{attributes.description}</p>
       </div>
-      <button type="button" onClick={() => handleAddToCart(product)}>
+      <button type="button" onClick={() => handleAddToCart(attributes)}>
         Buy
       </button>
     </div>

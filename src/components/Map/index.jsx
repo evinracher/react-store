@@ -2,10 +2,10 @@ import React from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import config from "../../config";
 
-const Map = () => {
+const Map = ({ data }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: config.googleMapsApi
+    googleMapsApiKey: config.googleMapsApiKey
   });
 
   const mapStyles = {
@@ -14,8 +14,8 @@ const Map = () => {
   };
 
   const defaultCenter = {
-    lat: 19.4268,
-    lng: -99.17
+    lat: data.lat,
+    lng: data.lng
   };
 
   const [map, setMap] = React.useState(null);

@@ -15,9 +15,9 @@ const Products = () => {
   return (
     <div className="Products">
       <div className="Products-items">
-        {products.map((item) => (
+        {products.map((item,index) => (
           <Product
-            key={item.id}
+            key={index}
             product={item}
             handleAddToCart={handleAddToCart}
           />

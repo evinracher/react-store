@@ -14,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@react-google-maps/api": "^2.8.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.12.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -23,9 +24,11 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "prettier": "^2.6.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-paypal-button-v2": "^2.6.3",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",

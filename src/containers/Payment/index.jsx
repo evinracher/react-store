@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { PayPalButton } from "react-paypal-button-v2";
 import AppContext from "../../context/AppContext";
 import { sumTotal } from "../../utils";
-import { useNavigate } from "react-router-dom";
+import config from "../../config";
 import "./Payment.css";
 
 const Payment = () => {
@@ -18,11 +20,20 @@ const Payment = () => {
         product: cart,
         payment: data,
       };
-      setTimeout(() => {
-        addNewOrder(newOrder);
-        navigate("/checkout/success");
-      }, 2000);
+      addNewOrder(newOrder);
+      navigate("/checkout/success");
     }
+  };
+
+  const paypalOptions = {
+    clientId: config.paypalClientId,
+    intent: 'capture',
+    currency: 'USD'
+  };
+
+  const buttonStyles = {
+    layout: 'vertical',
+    shape: 'rect'
   };
 
   return (
@@ -35,15 +46,14 @@ const Payment = () => {
             <span>{item.price}</span>
           </div>
         ))}
-        <button
-          onClick={() =>
-            handlePaymentSuccess({
-              status: "COMPLETED",
-            })
-          }
-        >
-          Pay with PayPal ${total}
-        </button>
+        <PayPalButton
+          paypalOptions={paypalOptions}
+          buttonStyles={buttonStyles}
+          amount={total}
+          onSuccess={data => handlePaymentSuccess(data)}
+          onError={error => console.log(error)}
+          onCancel={data => console.log(data)}
+        />
       </div>
     </div>
   );

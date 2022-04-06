@@ -57,8 +57,8 @@ const Information = () => {
       </div>
       <div className="Information-sidebar">
         <h3>Order:</h3>
-        {cart.map((item) => (
-          <div key={item.id} className="Information-item">
+        {cart.map((item, index) => (
+          <div key={index} className="Information-item">
             <div className="Information-element">
               <h4>{item.title}</h4>
               <span>$ {item.price}</span>

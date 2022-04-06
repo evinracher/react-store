@@ -10,10 +10,12 @@ const useAppState = () => {
 
   useEffect(() => {
     fetch(API)
-      .then(response => response.json())
-      .then(data => setProducts(data.data));
+      .then((response) => response.json())
+      .then((data) => setProducts(data.data))
+      .catch(_ => {
+        setProducts(initialState.products);
+      }); // support for older versions
   }, []);
-
 
   const addToCart = (newItem) => {
     setState({
@@ -49,7 +51,7 @@ const useAppState = () => {
     removeFromCart,
     addBuyer,
     addNewOrder,
-    products
+    products,
   };
 };
 

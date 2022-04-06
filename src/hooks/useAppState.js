@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import initialState from "../initialState";
+import config from "../config";
 
-const API = 'http://localhost:1337/api/products?populate=%2A';
+const API = `${config.strapi}/api/products?populate=%2A`;
 
 const useAppState = () => {
   const [state, setState] = useState(initialState);

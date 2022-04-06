@@ -1,11 +1,11 @@
 import React from "react";
+import config from "../../config";
 
 const Product = ({ product, handleAddToCart }) => {
   const { attributes } = product;
   return (
     <div className="Products-item">
-      {/* Put localhost in a constant. Maybe in .env */}
-      <img src={`http://localhost:1337${attributes.image.data[0].attributes.url}`} alt={attributes.title} />
+      <img src={`${config.strapi}${attributes.image.data[0].attributes.url}`} alt={attributes.title} />
       <div className="Products-item-info">
         <h2>
           {attributes.title}

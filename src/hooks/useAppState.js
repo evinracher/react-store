@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import initialState from "../initialState";
+import config from "../config";
+
+const API = `${config.strapi}/api/products?populate=%2A`;
 
 const useAppState = () => {
   const [state, setState] = useState(initialState);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(API)
+      .then((response) => response.json())
+      .then((data) => setProducts(data.data))
+      .catch(_ => {
+        setProducts(initialState.products);
+      }); // support for older versions
+  }, []);
 
   const addToCart = (newItem) => {
     setState({
@@ -38,6 +51,7 @@ const useAppState = () => {
     removeFromCart,
     addBuyer,
     addNewOrder,
+    products,
   };
 };
 

@@ -27,13 +27,13 @@ const Payment = () => {
 
   const paypalOptions = {
     clientId: config.paypalClientId,
-    intent: 'capture',
-    currency: 'USD'
+    intent: "capture",
+    currency: "USD",
   };
 
   const buttonStyles = {
-    layout: 'vertical',
-    shape: 'rect'
+    layout: "vertical",
+    shape: "rect",
   };
 
   return (
@@ -50,9 +50,9 @@ const Payment = () => {
           paypalOptions={paypalOptions}
           buttonStyles={buttonStyles}
           amount={total}
-          onSuccess={data => handlePaymentSuccess(data)}
-          onError={error => console.log(error)}
-          onCancel={data => console.log(data)}
+          onSuccess={(data) => handlePaymentSuccess(data)}
+          onError={(error) => console.log(error)}
+          onCancel={(data) => console.log(data)}
         />
       </div>
     </div>

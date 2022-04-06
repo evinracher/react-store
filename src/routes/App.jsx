@@ -12,7 +12,8 @@ import useAppState from "../hooks/useAppState";
 
 const App = () => {
   const AppState = useAppState();
-  return (
+  const stateCount = Object.keys(AppState).length;
+  return stateCount > 0 ? (
     <AppContext.Provider value={AppState}>
       <BrowserRouter>
         <Layout>
@@ -31,6 +32,8 @@ const App = () => {
         </Layout>
       </BrowserRouter>
     </AppContext.Provider>
+  ) : (
+    <h1>Loading...</h1>
   );
 };
 

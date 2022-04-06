@@ -1,11 +1,11 @@
-import React from 'react';
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import React from "react";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import config from "../../config";
 
 const Map = ({ data }) => {
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: config.googleMapsApiKey
+    id: "google-map-script",
+    googleMapsApiKey: config.googleMapsApiKey,
   });
 
   const mapStyles = {
@@ -15,7 +15,7 @@ const Map = ({ data }) => {
 
   const defaultCenter = {
     lat: data.lat,
-    lng: data.lng
+    lng: data.lng,
   };
 
   const [map, setMap] = React.useState(null);
@@ -30,18 +30,19 @@ const Map = ({ data }) => {
     setMap(null);
   }, []);
 
-  return isLoaded && (
-    <GoogleMap
-      mapContainerStyle={mapStyles}
-      Zoom={17}
-      center={defaultCenter}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-    >
-      <Marker position={defaultCenter} />
-    </GoogleMap>
+  return (
+    isLoaded && (
+      <GoogleMap
+        mapContainerStyle={mapStyles}
+        Zoom={17}
+        center={defaultCenter}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+      >
+        <Marker position={defaultCenter} />
+      </GoogleMap>
+    )
   );
-
 };
 
 export default Map;
